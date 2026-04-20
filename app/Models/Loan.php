@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Loan extends Model
 {
     use HasFactory;
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_npm', 'npm');
+    }
+
+    public function loanDetails()
+    {
+        return $this->hasMany(LoanDetail::class);
+    }
 }

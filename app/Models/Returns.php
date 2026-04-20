@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Returns extends Model
 {
     use HasFactory;
+
+    public function loanDetail()
+    {
+        return $this->belongsTo(LoanDetail::class);
+    }
 }
